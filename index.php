@@ -5,7 +5,8 @@ Dobbiamo creare una pagina che permetta ai nostri utenti di utilizzare il nostro
 Milestone 1
 Creare un form che invii in GET la lunghezza della password. Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli) da restituire all’utente. Scriviamo tutto (logica e layout) in un unico file index.php
 
-
+Milestone 2
+Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
 -->
 
 
@@ -14,6 +15,21 @@ Creare un form che invii in GET la lunghezza della password. Una nostra funzione
 
 $length = $_GET['length'];
 //var_dump($length);
+
+$repetitions = $_GET['repetitions'];
+//var_dump($repetitions);
+
+$no_repetitions = $_GET['no_repetitions'];
+//var_dump($no_repetitions);
+
+$letters = $_GET['letters'];
+//var_dump($letters);
+
+$numbers = $_GET['numbers'];
+//var_dump($numbers);
+
+$symbols = $_GET['symbols'];
+//var_dump($symbols);
 
 
 ?>
@@ -59,26 +75,26 @@ $length = $_GET['length'];
                         </label>
                     </div>
                     <div class="form-check mb-5">
-                        <input class="form-check-input" type="radio" name="no_repetitions" id="no_repetitions" checked>
-                        <label class="form-check-label" for="no_repetitions">
+                        <input class="form-check-input" type="radio" name="no_repetitions" id="repetitions">
+                        <label class="form-check-label" for="repetitions">
                             No
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="letters" name="letters" checked>
+                        <input class="form-check-input" type="checkbox" value="1" id="letters" name="letters" checked>
                         <label class="form-check-label" for="letters">
                             Lettere
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="numbers" name="numbers" checked>
+                        <input class="form-check-input" type="checkbox" value="1" id="numbers" name="numbers">
                         <label class="form-check-label" for="numbers">
                             Numeri
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="symbols" name="symbols" checked>
+                        <input class="form-check-input" type="checkbox" value="1" id="symbols" name="symbols">
                         <label class="form-check-label" for="symbols">
                             Simboli
                         </label>
