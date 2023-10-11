@@ -73,7 +73,7 @@ $_SESSION['generated_password'] = $newPassword;
         <div style="border-radius: 5px;" class="bg-primary-subtle p-3 text-secondary text-start mb-3">
             <?php if ($newPassword == '') : ?>
                 Nessun parametro valido inserito...
-            <?php else :?>
+            <?php else : ?>
                 <a href="server.php">La tua password generata casualmente è:</a>
             <?php endif; ?>
         </div>
