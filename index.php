@@ -38,13 +38,13 @@ $symbols = $_GET['symbols'];
 
 include 'functions.php';
 
-$newPassword = createPassword($length, $repetitions, $numbers, $letters, $symbols);
+$newPassword = createPassword($length, $repetitions, $numbers, $symbols);
 ?>
 
 <?php
 session_start();
 
-$_SESSION['generated_password'] = $newPassword;
+$_SESSION['newPassword'] = $newPassword;
 ?>
 
 
@@ -71,9 +71,9 @@ $_SESSION['generated_password'] = $newPassword;
         <h2>Genera una password sicura</h2>
 
         <div style="border-radius: 5px;" class="bg-primary-subtle p-3 text-secondary text-start mb-3">
-            <?php if ($newPassword == '') : ?>
+            <?php if ($newPassword == '') :?>
                 Nessun parametro valido inserito...
-            <?php else : ?>
+            <?php else :?>
                 <a href="server.php">La tua password generata casualmente è:</a>
             <?php endif; ?>
         </div>
@@ -81,7 +81,7 @@ $_SESSION['generated_password'] = $newPassword;
         <form style="border-radius: 5px; padding-right: 20%" class="py-5 ps-5 bg-light text-black text-start">
             <div class="d-flex justify-content-between mb-5">
                 <span>Lunghezza password:</span>
-                <input style="border-radius: 5px; border-color:grey" type="number" name="length" id="length" placeholder="max: 26 caratteri" class="py-2">
+                <input style="border-radius: 5px; border-color:grey; " type="number" name="length" id="length" placeholder="between 8 and 26" class="py-2">
             </div>
 
             <div class="d-flex justify-content-between mb-3">
@@ -101,8 +101,8 @@ $_SESSION['generated_password'] = $newPassword;
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="1" id="letters" name="letters" checked disabled>
-                        <label class="form-check-label" for="letters">
+                        <input style="opacity: 1;" class="form-check-input" type="checkbox" value="1" id="letters" name="letters" checked disabled>
+                        <label style="color: black; opacity: 1;" class="form-check-label" for="letters">
                             Lettere
                         </label>
                     </div>
@@ -130,3 +130,4 @@ $_SESSION['generated_password'] = $newPassword;
 </body>
 
 </html>
+

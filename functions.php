@@ -1,15 +1,15 @@
 <?php
 
-function createPassword($length, $repetitions, $numbers, $letters, $symbols)
+function createPassword($length, $repetitions, $numbers, $symbols)
 {
     $password = '';
 
-    if ($length != null && $length != '' && $length <= '26') {
+    if ($length >= '8' && $length <= '26') {
         function generaParolaCasuale($length, $password, $repetitions, $numbers, $symbols)
         {
-            $caratteri = 'abcdefghijklmnopqrstuvwxyz';
+            $caratteri = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
             $numeri = '1234567890';
-            $simboli = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+            $simboli = '!@#$%^&*()-_+=[]{};:",.<>/?\|~';
 
             if ($numbers == '1' && $symbols == '1') {
                 $caratteri =  $caratteri . $numeri . $simboli;
@@ -18,8 +18,6 @@ function createPassword($length, $repetitions, $numbers, $letters, $symbols)
             } elseif (!$numbers == '1' && $symbols == '1') {
                 $caratteri =  $caratteri . $simboli;
             }
-
-            $password = '';
 
             for ($i = 0; $i < $length; $i++) {
                 $indice = rand(0, strlen($caratteri) - 1);
@@ -43,5 +41,3 @@ function createPassword($length, $repetitions, $numbers, $letters, $symbols)
 
     return $password;
 }
-
-?>

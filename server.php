@@ -2,7 +2,7 @@
 
 session_start();
 
-$generatedPassword = $_SESSION['generated_password'];
+$newPassword = $_SESSION['newPassword'];
 
 ?>
 
@@ -17,7 +17,7 @@ $generatedPassword = $_SESSION['generated_password'];
 </head>
 <body class="p-5 text-center bg-info">
     <h1>LA TUA PASSWORD GENERATA CASUALMENTE É:</h1>
-    <h5 class="mb-5"><?= $generatedPassword?></h5>
+    <h5 class="mb-5"><?= $newPassword?></h5>
 
     <a href="index.php"><button class="btn btn-primary">rigenera</button></a>
 </body>
